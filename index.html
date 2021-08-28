@@ -10,6 +10,7 @@
     <script>
 if('geolocation' in navigator){
     console.log('geolocation is available')
+    
     navigator.geolocation.watchPosition(position => {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
@@ -18,13 +19,16 @@ if('geolocation' in navigator){
         document.getElementById('longitude').textContent = lng;
         document.getElementById('speed').textContent = spd;
         console.log(position);
-         
+        if(speed > 1){
+               console.log(setTimeout(function(){ alert("Drive slow"); }, 1500))
+        }
     });
 }
 else {
     console.log('geolocation is not available')
 }
         
+
      
 
     </script>
