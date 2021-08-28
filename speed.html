@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+if('geolocation' in navigator){
+    console.log('geolocation is available')
+    navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const spd = position.coords.speed;
+        document.getElementById('latitude').textContent = lat;
+        document.getElementById('longitude').textContent = lng;
+        document.getElementById('speed').textContent = spd;
+        console.log(position);
+         
+    });
+}
+else {
+    console.log('geolocation is not available')
+}
+        
+     
+
+    </script>
+    <p>
+        latitude: <Span id="latitude"></Span>&deg;<br>
+        longitude: <span id="longitude"></span>&deg;<br>
+        speed: <span id="speed"></span>
+    </p>
+</body>
+</html>
