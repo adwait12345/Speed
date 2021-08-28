@@ -19,9 +19,13 @@ if('geolocation' in navigator){
         document.getElementById('longitude').textContent = lng;
         document.getElementById('speed').textContent = spd;
         console.log(position);
-        if(spd > 1){
-                alert("Drive slow"); 
-            spd = 0;
+       if(spd > 0.008 && t<3 ){
+               alert("Drive slow");
+            t++;
+        }
+        else if( spd<0.008)
+        {
+            t=0;
         }
     });
 }
