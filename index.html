@@ -21,6 +21,7 @@ if('geolocation' in navigator){
         console.log(position);
         if(spd > 0.05){
                 alert("Drive slow"); 
+            spd = 0;
         }
     });
 }
