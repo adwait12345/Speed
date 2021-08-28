@@ -13,7 +13,7 @@ if('geolocation' in navigator){
     navigator.geolocation.watchPosition(position => {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
-        const spd = position.coords.speed;
+        var spd = position.coords.speed;
         document.getElementById('latitude').textContent = lat;
         document.getElementById('longitude').textContent = lng;
         document.getElementById('speed').textContent = spd;
